@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Trash2, Edit2, CheckCircle, XCircle, Users, Image as ImageIcon, FileText, User, Calendar, X, MessageSquare, Phone, Mail, Eye } from 'lucide-react';
 
-const API_BASE = 'https://latio-backend-production-050c.up.railway.app/api';
+const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://latio-backend-production-050c.up.railway.app/api');
 
 interface BlogPost {
     _id: string;
@@ -139,9 +139,13 @@ export function Admin() {
                 showNotification(editingId ? 'Cập nhật thành công' : 'Thêm bài viết thành công', 'success');
                 resetBlogForm();
                 fetchData();
+            } else {
+                const errorData = await res.json().catch(() => ({}));
+                throw new Error(errorData.message || 'Lỗi từ server');
             }
         } catch (error) {
-            showNotification('Lỗi khi lưu bài viết', 'error');
+            console.error("Lỗi chi tiết:", error);
+            showNotification(`Lỗi khi lưu bài viết: ${error instanceof Error ? error.message : 'Lỗi kết nối'}`, 'error');
         }
     };
 
