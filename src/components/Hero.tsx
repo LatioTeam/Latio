@@ -51,7 +51,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1.2 }}
+            transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-white/80 text-xs sm:text-sm md:text-base max-w-md"
           >
             Chúng tôi cung cấp các giải pháp AI đột phá, trao quyền cho doanh nghiệp với công nghệ tiên tiến để bứt phá và vươn tầm toàn cầu.
@@ -60,7 +60,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1.2 }}
+            transition={{ duration: 1.2, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="hidden lg:block text-white/80 text-sm md:text-base lg:text-right"
           >
             1000+ Doanh Nghiệp Đã Triển Khai !
@@ -75,7 +75,7 @@ export function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-cyan-400 text-[10px] sm:text-xs uppercase font-black tracking-[0.3em] sm:tracking-[0.5em] mb-4 sm:mb-6 relative"
           >
             <span className="relative z-10">Kỷ Nguyên Marketing AI Mới</span>
@@ -90,7 +90,7 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, filter: 'blur(10px)', scale: 0.95 }}
               animate={{ opacity: 1, filter: 'blur(0px)', scale: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut", delay: 0.4 }}
+              transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
               className="text-white font-normal tracking-tight leading-[0.85] text-4xl sm:text-6xl md:text-8xl lg:text-9xl m-0 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             >
               LATIO AI
@@ -99,7 +99,7 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.8 }}
+              transition={{ duration: 1.2, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <ShinyText
                 text="Marketing Agency"

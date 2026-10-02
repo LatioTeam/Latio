@@ -363,29 +363,41 @@ export function Services() {
   }, []);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      y: 0,
       transition: {
-        staggerChildren: 0.1,
-        duration: 0.6
+        staggerChildren: 0.12,
+        delayChildren: 0.1
+      }
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1
       }
     }
   };
 
   const cardVariants: any = {
-    hidden: { opacity: 0, y: 50, scale: 0.9, rotateX: -10 },
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: { 
       opacity: 1, 
       scale: 1, 
       y: 0,
-      rotateX: 0,
       transition: { 
-        type: "spring",
-        stiffness: 80,
-        damping: 15,
-        mass: 1
+        duration: 0.8,
+        ease: [0.16, 1, 0.3, 1]
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: -30,
+      scale: 0.95,
+      transition: {
+        duration: 0.4,
+        ease: [0.16, 1, 0.3, 1]
       }
     }
   };
@@ -544,7 +556,7 @@ export function Services() {
                       <motion.div
                         layoutId="activeTab"
                         className="absolute inset-0 bg-blue-600 rounded-2xl shadow-[0_15px_35px_-10px_rgba(37,99,235,0.6)]"
-                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                        transition={{ type: "spring", stiffness: 60, damping: 20, mass: 1 }}
                       />
                     )}
                     <span className="relative z-10 flex items-center gap-3">
@@ -578,7 +590,7 @@ export function Services() {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              exit="hidden"
+              exit="exit"
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
             >
               {pricingData[activeTab].packages.map((pkg, index) => {
@@ -587,7 +599,7 @@ export function Services() {
                   <motion.div
                     key={index}
                     variants={cardVariants}
-                    whileHover={{ y: -10 }}
+                    whileHover={{ y: -10, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }}
                     className={`relative flex flex-col rounded-[2.5rem] transition-all duration-500 ${styles.glass} border ${styles.border} ${pkg.popular ? styles.glow : ''} ${styles.innerGlow} group/card shadow-2xl`}
                   >
                     {/* Popular Badge - Positioned outside overflow area */}
