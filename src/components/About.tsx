@@ -4,6 +4,7 @@ import { Navbar } from './Navbar';
 import { Target, Award, Users, Globe, PlaySquare, TrendingUp, Briefcase } from 'lucide-react';
 import { ShinyText } from './ShinyText';
 import { Footer } from './Footer';
+import { GalaxyBackground } from './GalaxyBackground';
 
 export function About() {
   const steps = [
@@ -47,7 +48,8 @@ export function About() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col font-sans bg-black min-h-screen text-slate-300 relative overflow-hidden">
+    <div className="w-full flex flex-col font-sans bg-transparent min-h-screen text-slate-300 relative overflow-hidden">
+      <GalaxyBackground />
 
       {/* GLOBAL BACKGROUND EFFECTS (ANIMATED) */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">

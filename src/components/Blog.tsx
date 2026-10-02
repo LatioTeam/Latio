@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { GalaxyBackground } from './GalaxyBackground';
 import { Search, Calendar, User, ArrowRight, Loader2 } from 'lucide-react';
 
 interface BlogPost {
@@ -48,14 +49,15 @@ export function Blog() {
   });
 
   return (
-    <div className="w-full min-h-screen bg-[#050505] text-white font-sans selection:bg-orange-500/30">
+    <div className="w-full min-h-screen bg-transparent text-white font-sans selection:bg-orange-500/30">
+      <GalaxyBackground />
       <header className="fixed top-0 left-0 w-full z-50 bg-black border-b border-white/5 px-6 py-4">
         <Navbar />
       </header>
 
-      <main className="bg-black">
+      <main className="bg-transparent">
         {/* Hero Section */}
-        <section className="relative px-6 pt-32 pb-16 overflow-hidden bg-black">
+        <section className="relative px-6 pt-32 pb-16 overflow-hidden bg-transparent">
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

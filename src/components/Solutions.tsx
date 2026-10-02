@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { GalaxyBackground } from './GalaxyBackground';
 import { Zap, Cpu, Video, ArrowRight, CheckCircle2, BarChart3, Users2 } from 'lucide-react';
 import { ShinyText } from './ShinyText';
 
@@ -57,7 +58,8 @@ export function Solutions() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-black text-white selection:bg-blue-500/30">
+    <div className="w-full min-h-screen bg-transparent text-white selection:bg-blue-500/30">
+      <GalaxyBackground />
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 px-6 py-4 ${scrolled
         ? "bg-black/90 backdrop-blur-md border-b border-white/5 shadow-2xl"
         : "bg-transparent border-transparent"
@@ -127,7 +129,7 @@ export function Solutions() {
                   </div>
 
                   <Link
-                    to="/contact"
+                    to="/services"
                     className="group flex items-center gap-3 px-8 py-4 bg-white text-black font-black uppercase tracking-widest text-sm rounded-2xl hover:bg-blue-600 hover:text-white transition-all duration-500 shadow-xl shadow-white/5 active:scale-95"
                   >
                     Tư vấn giải pháp ngay

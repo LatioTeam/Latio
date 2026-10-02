@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { GalaxyBackground } from './GalaxyBackground';
 import { Mail, Phone, MapPin, Send, MessageSquare, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { ShinyText } from './ShinyText';
 
@@ -75,7 +76,8 @@ export function Contact() {
   ];
 
   return (
-    <div className="w-full flex flex-col font-sans bg-black min-h-screen text-slate-300 relative overflow-hidden">
+    <div className="w-full flex flex-col font-sans bg-transparent min-h-screen text-slate-300 relative overflow-hidden">
+      <GalaxyBackground />
 
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
