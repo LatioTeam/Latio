@@ -8,7 +8,9 @@ import { Admin } from './components/Admin';
 import { Blog } from './components/Blog';
 import { BlogDetail } from './components/BlogDetail';
 import { Contact } from './components/Contact';
-import { Services } from './components/Services';
+import { ServicesHub } from './components/ServicesHub';
+import { ServicesCare } from './components/ServicesCare';
+import { ServicesAds } from './components/ServicesAds';
 import { FloatingContact } from './components/FloatingContact';
 import ScrollToTop from './components/ScrollToTop';
 import { Solutions } from './components/Solutions';
@@ -48,7 +50,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<ServicesHub />} />
+        <Route path="/services/care" element={<ServicesCare />} />
+        <Route path="/services/ads" element={<ServicesAds />} />
         <Route path="/solutions" element={<Solutions />} />
       </Routes>
       <FloatingContact />

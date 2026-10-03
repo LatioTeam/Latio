@@ -10,7 +10,14 @@ export function Navbar({ className = "" }: { className?: string }) {
   const navItems = [
     { name: 'Trang Chủ', path: '/' },
     { name: 'Về Chúng Tôi', path: '/about' },
-    { name: 'Dịch Vụ', path: '/services' },
+    { 
+      name: 'Dịch Vụ', 
+      path: '/services',
+      dropdown: [
+        { name: 'Dịch vụ chăm sóc', path: '/services/care' },
+        { name: 'Dịch vụ về ads', path: '/services/ads' }
+      ]
+    },
     { name: 'Giải Pháp', path: '/solutions' },
     { name: 'Blog', path: '/blog' },
   ];
@@ -38,30 +45,53 @@ export function Navbar({ className = "" }: { className?: string }) {
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
             return (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`relative px-4 py-1.5 text-sm font-bold transition-all duration-300 rounded-full group ${
-                  isActive ? 'text-white' : 'text-white/60 hover:text-white'
-                }`}
-              >
-                <span className="relative z-10">{item.name}</span>
-                {isActive && (
-                  <motion.div
-                    layoutId="nav-pill"
-                    className="absolute inset-0 z-0"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  >
-                    <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-[0_5px_20px_-5px_rgba(0,0,0,0.5)]" />
-                    <div className="absolute inset-2 bg-blue-500/20 blur-md rounded-full" />
-                    <div className="absolute top-0 inset-x-4 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent" />
-                    <div className="absolute bottom-0 inset-x-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                  </motion.div>
+              <div key={item.name} className="relative group">
+                <Link
+                  to={item.path}
+                  className={`relative px-4 py-1.5 text-sm font-bold transition-all duration-300 rounded-full flex items-center gap-1 ${
+                    isActive ? 'text-white' : 'text-white/60 hover:text-white'
+                  }`}
+                >
+                  <span className="relative z-10">{item.name}</span>
+                  {item.dropdown && (
+                    <svg className="w-3.5 h-3.5 relative z-10 opacity-70 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 z-0"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    >
+                      <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-[0_5px_20px_-5px_rgba(0,0,0,0.5)]" />
+                      <div className="absolute inset-2 bg-blue-500/20 blur-md rounded-full" />
+                      <div className="absolute top-0 inset-x-4 h-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent" />
+                      <div className="absolute bottom-0 inset-x-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                    </motion.div>
+                  )}
+                  {!isActive && (
+                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-full transition-colors duration-300" />
+                  )}
+                </Link>
+
+                {/* Dropdown Menu */}
+                {item.dropdown && (
+                  <div className="absolute top-full left-0 pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-[100]">
+                    <div className="bg-[#0f0f0f]/90 border border-white/10 rounded-2xl overflow-hidden shadow-2xl p-2 flex flex-col gap-1 backdrop-blur-xl">
+                      {item.dropdown.map(dropItem => (
+                        <Link 
+                          key={dropItem.name}
+                          to={dropItem.path}
+                          className="px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/10 rounded-xl transition-all whitespace-nowrap"
+                        >
+                          {dropItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
-                {!isActive && (
-                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 rounded-full transition-colors duration-300" />
-                )}
-              </Link>
+              </div>
             );
           })}
           <div className="w-px h-4 bg-white/10 mx-2"></div>
@@ -130,6 +160,7 @@ export function Navbar({ className = "" }: { className?: string }) {
                       initial={{ opacity: 0, x: 30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.06 }}
+                      className="flex flex-col gap-1"
                     >
                       <Link
                         to={item.path}
@@ -142,7 +173,27 @@ export function Navbar({ className = "" }: { className?: string }) {
                       >
                         {isActive && <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />}
                         {item.name}
+                        {item.dropdown && (
+                          <svg className="w-4 h-4 ml-auto opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                        )}
                       </Link>
+                      
+                      {/* Mobile Dropdown */}
+                      {item.dropdown && (
+                        <div className="pl-6 flex flex-col gap-1 mb-2">
+                          {item.dropdown.map(drop => (
+                            <Link
+                              key={drop.name}
+                              to={drop.path}
+                              onClick={handleNavClick}
+                              className="px-4 py-2.5 text-sm font-medium text-gray-400 hover:text-white rounded-xl hover:bg-white/5 flex items-center gap-2"
+                            >
+                              <div className="w-1 h-1 rounded-full bg-gray-600"></div>
+                              {drop.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </motion.div>
                   );
                 })}

@@ -28,7 +28,8 @@ export function BlogDetail() {
 
   const fetchPost = async () => {
     try {
-      const res = await fetch(`https://latio-backend-production-050c.up.railway.app/api/blogs/${id}`);
+      const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://latio-backend-production-050c.up.railway.app/api');
+      const res = await fetch(`${API_BASE}/blogs/${id}`);
       if (!res.ok) throw new Error('Not found');
       const data = await res.json();
       setPost(data);

@@ -5,7 +5,7 @@ export function GalaxyBackground() {
     <div className="fixed inset-0 z-[-1] bg-[#050505] pointer-events-none">
       {/* Static Galaxy Image Background */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-70"
         style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&auto=format&fit=crop")',
           backgroundSize: 'cover',
@@ -16,7 +16,7 @@ export function GalaxyBackground() {
       />
       
       {/* Gradient Overlays to make text readable */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80" />
     </div>
   );
 }

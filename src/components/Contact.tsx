@@ -28,7 +28,8 @@ export function Contact() {
     setFormState('submitting');
 
     try {
-      const response = await fetch('https://latio-backend-production-050c.up.railway.app/api/contacts', {
+      const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://latio-backend-production-050c.up.railway.app/api');
+      const response = await fetch(`${API_BASE}/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

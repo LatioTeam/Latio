@@ -366,10 +366,11 @@ function PartnerGrid() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://latio-backend-production-050c.up.railway.app/api/partners')
+    const API_BASE = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://latio-backend-production-050c.up.railway.app/api');
+    fetch(`${API_BASE}/partners`)
       .then(res => res.json())
       .then(data => {
-        setPartners(data);
+        setPartners(Array.isArray(data) ? data : []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
