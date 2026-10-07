@@ -123,7 +123,7 @@ export function ServicesAds() {
                 <ArrowRight className="w-5 h-5 rotate-180" />
               </button>
             </div>
-            <div id="tabs-ads" className="flex overflow-x-auto no-scrollbar justify-center gap-5 pb-8 px-12 scroll-smooth" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div id="tabs-ads" className="flex overflow-x-auto no-scrollbar justify-start md:justify-center gap-5 pb-8 px-12 scroll-smooth" style={{ WebkitOverflowScrolling: 'touch' }}>
               {Object.entries(adsPricingData).map(([key, data]) => {
                 const isActive = activeTab === key;
                 return (

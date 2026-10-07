@@ -353,7 +353,7 @@ export function Services() {
             <div className="absolute left-4 inset-y-0 flex items-center z-20 pointer-events-none">
               <button onClick={() => document.getElementById('tabs-ads')?.scrollBy({ left: -400, behavior: 'smooth' })} className="pointer-events-auto p-3 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-orange-600 hover:scale-110 shadow-[0_0_30px_rgba(234,88,12,0.3)]"><ArrowRight className="w-5 h-5 rotate-180" /></button>
             </div>
-            <div id="tabs-ads" className="flex overflow-x-auto no-scrollbar justify-center gap-5 pb-8 px-12 scroll-smooth" style={{ willChange: 'scroll-position', WebkitOverflowScrolling: 'touch' }}>
+            <div id="tabs-ads" className="flex overflow-x-auto no-scrollbar justify-start md:justify-center gap-5 pb-8 px-12 scroll-smooth" style={{ willChange: 'scroll-position', WebkitOverflowScrolling: 'touch' }}>
               {Object.entries(adsPricingData).map(([key, data]) => {
                 const isActive = activeAdsTab === key;
                 return (
