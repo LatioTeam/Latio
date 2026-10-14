@@ -104,6 +104,13 @@ export function Navbar({ className = "" }: { className?: string }) {
             <span className="text-sm font-bold">Liên Hệ</span>
             <ArrowRight className={`w-4 h-4 transition-transform ${location.pathname === '/contact' ? '' : 'group-hover:translate-x-1'}`} />
           </Link>
+          <div className="w-px h-4 bg-white/10 mx-2"></div>
+          <Link
+            to="/internal"
+            className="group flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold text-cyan-400 border border-cyan-400/30 hover:bg-cyan-400/10 transition-all duration-300"
+          >
+            <span>Nội bộ</span>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

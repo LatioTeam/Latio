@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { InternalApp } from './internal/InternalApp';
 import { Hero } from './components/Hero';
 import { Pricing } from './components/Pricing';
 import { About } from './components/About';
@@ -54,6 +55,7 @@ function App() {
         <Route path="/services/care" element={<ServicesCare />} />
         <Route path="/services/ads" element={<ServicesAds />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/internal/*" element={<InternalApp />} />
       </Routes>
       <FloatingContact />
     </Router>
