@@ -15,6 +15,7 @@ import { FloatingContact } from './components/FloatingContact';
 import ScrollToTop from './components/ScrollToTop';
 import { Solutions } from './components/Solutions';
 import { AdsLandingPage } from './components/AdsLandingPage';
+import { AdsLandingDanang } from './components/AdsLandingDanang';
 
 function HomePage() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/services/ads" element={<ServicesAds />} />
         <Route path="/solutions" element={<Solutions />} />
         <Route path="/ads" element={<AdsLandingPage />} />
+        <Route path="/quang-cao-da-nang" element={<AdsLandingDanang />} />
       </Routes>
       <FloatingContact />
     </Router>
