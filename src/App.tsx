@@ -14,6 +14,7 @@ import { ServicesAds } from './components/ServicesAds';
 import { FloatingContact } from './components/FloatingContact';
 import ScrollToTop from './components/ScrollToTop';
 import { Solutions } from './components/Solutions';
+import { AdsLandingPage } from './components/AdsLandingPage';
 
 function HomePage() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route path="/services/care" element={<ServicesCare />} />
         <Route path="/services/ads" element={<ServicesAds />} />
         <Route path="/solutions" element={<Solutions />} />
+        <Route path="/ads" element={<AdsLandingPage />} />
       </Routes>
       <FloatingContact />
     </Router>
