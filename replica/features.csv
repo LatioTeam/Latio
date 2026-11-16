@@ -1,0 +1,65 @@
+feature,area,priority,original,clone,notes
+Check-in bằng GPS,Attendance,must,yes,no,Geofence radius configurable
+Check-in bằng WiFi SSID,Attendance,must,yes,no,So sánh MAC/SSID
+Check-in bằng QR code,Attendance,must,yes,no,Manager generate QR tại chỗ
+Check-in bằng ảnh chụp,Attendance,should,yes,no,Photo timestamp không thay thế được GPS
+Check-in multi-method (kết hợp),Attendance,should,yes,no,Dùng AND/OR logic
+Chấm công theo ngày,Attendance,must,yes,no,Đơn vị: ngày
+Chấm công theo giờ,Attendance,must,yes,no,Đơn vị: giờ
+Chấm công theo ca,Attendance,must,yes,no,Shift-based
+Offline check-in (sync sau),Attendance,must,yes,no,Queue cục bộ khi mất mạng
+Clock-out tự động khi hết ca,Attendance,should,yes,no,Auto + penalty setting
+Lịch sử chấm công cá nhân,Attendance,must,yes,no,Calendar + list view
+Manager chỉnh sửa chấm công,Attendance,must,yes,no,Audit log bắt buộc
+Nhân viên xin điều chỉnh chấm công,Attendance,should,yes,no,Approval workflow
+Báo cáo đi muộn / về sớm,Attendance,must,yes,no,So sánh với shift start/end
+Thống kê chuyên cần tháng/quý/năm,Attendance,must,yes,no,Charts + export
+Đặt lịch ca làm việc,Shift,must,yes,no,Create shift templates
+Phân ca cho nhân viên,Shift,must,yes,no,Drag-assign trên calendar
+Ca qua đêm (overnight),Shift,should,yes,no,Cross-midnight logic
+Thông báo nhắc ca,Shift,should,yes,no,Push notification trước N phút
+Nhân viên xin đổi ca,Shift,could,yes,no,Peer swap + manager approve
+Xin nghỉ phép nguyên ngày,Leave,must,yes,no,
+Xin nghỉ phép nửa ngày,Leave,must,yes,no,Sáng / chiều
+Xin nghỉ phép theo giờ,Leave,should,yes,no,v3.4.3
+Nghỉ có lương / không lương,Leave,must,yes,no,Ảnh hưởng payroll
+Theo dõi số ngày phép còn lại,Leave,must,yes,no,Balance per leave type
+Manager duyệt / từ chối nghỉ phép,Leave,must,yes,no,Với ghi chú lý do
+Lịch sử đơn nghỉ,Leave,must,yes,no,
+Xin tăng ca (OT),Overtime,must,yes,no,Manager approve
+Hệ số lương OT configurable,Overtime,must,yes,no,Ví dụ 1.5x 2x
+Lương cơ bản (tháng / ngày / giờ),Payroll,must,yes,no,
+Phụ cấp cố định hàng tháng,Payroll,must,yes,no,JSON configurable
+Phụ cấp theo ca,Payroll,should,yes,no,v3.4.5
+Khấu trừ (BHXH thuế khác),Payroll,must,yes,no,
+Ứng lương,Payroll,should,yes,no,Advance tracking
+Tính lương tự động cuối tháng,Payroll,must,yes,no,Engine dựa trên attendance
+Phiếu lương mobile,Payroll,must,yes,no,Employee self-service
+Export bảng lương Excel,Payroll,must,yes,no,
+Export bảng lương PDF,Payroll,should,yes,no,
+Báo cáo theo phòng ban,Payroll,should,no,no,LATIO addition
+Quản lý nhân viên (CRUD),HR,must,yes,no,
+Hồ sơ nhân viên chi tiết,HR,must,yes,no,ID DOB địa chỉ liên hệ khẩn
+Phân quyền Manager / Employee,HR,must,yes,no,RBAC
+Mời nhân viên qua mã / link / QR,HR,must,yes,no,
+Push notification,Notifications,must,yes,no,FCM + APNs
+Thông báo ca / nghỉ / lương,Notifications,must,yes,no,
+Đăng nhập email / phone + OTP,Auth,must,yes,no,
+Đăng nhập Google SSO,Auth,should,yes,no,
+Tạo workspace (Manager),Auth,must,yes,no,
+Multi-workspace (1 user nhiều workspace),Auth,could,yes,no,
+Cài đặt quy tắc check-in,Config,must,yes,no,GPS radius WiFi QR
+Cài đặt giờ làm việc,Config,must,yes,no,Start end time per shift
+Cài đặt penalty tự động,Config,should,yes,no,Auto deduct nếu quên check-out
+Dark mode,UI,could,yes,no,
+Đa ngôn ngữ (VI / EN),UI,must,yes,no,
+Responsive web admin,UI,must,no,no,LATIO addition — AtWork web-only admin
+Chấm công theo dự án / client,Project,must,no,no,LATIO-specific — agency billing
+Timesheet xuất cho client,Project,must,no,no,LATIO-specific
+Dashboard realtime CEO,Dashboard,should,no,no,LATIO-specific
+Tích hợp Slack thông báo,Integration,should,no,no,LATIO dùng Slack
+Tích hợp Notion,Integration,could,no,no,LATIO dùng Notion
+Face ID attendance,Biometric,could,yes,no,Atwork upcoming — skip MVP
+Lịch âm (Lunar calendar),Calendar,could,yes,no,Skip MVP
+Theo dõi Doanh thu / Chi phí,PnL,could,yes,no,Out of scope
+Widget thời tiết,Misc,could,yes,no,Out of scope
