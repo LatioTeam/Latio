@@ -27,7 +27,7 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-subtle flex items-center justify-center p-4">
+    <main className="min-h-screen bg-bg-subtle flex items-center justify-center p-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
         <div className="text-center mb-8">
@@ -45,8 +45,9 @@ export default function AdminLoginPage() {
 
           {step === "email" ? (
             <div>
-              <label className="block text-sm font-medium text-text mb-1">Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-text mb-1">Email</label>
               <input
+                id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -95,6 +96,6 @@ export default function AdminLoginPage() {
           )}
         </form>
       </div>
-    </div>
+    </main>
   );
 }
