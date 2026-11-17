@@ -1,0 +1,17 @@
+# Next.js build output
+.next/
+out/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Node
+node_modules/
+
+# Env files
+.env*.local
+
+# Misc
+.DS_Store
+*.tsbuildinfo
