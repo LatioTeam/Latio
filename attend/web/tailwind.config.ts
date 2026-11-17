@@ -1,0 +1,71 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  darkMode: ["class", '[data-theme="dark"]'],
+  theme: {
+    extend: {
+      colors: {
+        bg:              "var(--color-bg)",
+        "bg-subtle":     "var(--color-bg-subtle)",
+        surface:         "var(--color-surface)",
+        "surface-raised":"var(--color-surface-raised)",
+        border:          "var(--color-border)",
+        "border-input":  "var(--color-border-input)",
+        "border-focus":  "var(--color-border-focus)",
+        text:            "var(--color-text)",
+        "text-muted":    "var(--color-text-muted)",
+        "text-subtle":   "var(--color-text-subtle)",
+        accent:          "var(--color-accent)",
+        "accent-hover":  "var(--color-accent-hover)",
+        "accent-subtle": "var(--color-accent-subtle)",
+        "on-accent":     "var(--color-on-accent)",
+        success:         "var(--color-success)",
+        "success-bg":    "var(--color-success-bg)",
+        danger:          "var(--color-danger)",
+        "danger-bg":     "var(--color-danger-bg)",
+        warning:         "var(--color-warning)",
+        "warning-bg":    "var(--color-warning-bg)",
+        info:            "var(--color-info)",
+        "info-bg":       "var(--color-info-bg)",
+        checkin:         "var(--color-checkin)",
+        checkout:        "var(--color-checkout)",
+        late:            "var(--color-late)",
+        absent:          "var(--color-absent)",
+        leave:           "var(--color-leave)",
+        ot:              "var(--color-ot)",
+        "nav-bg":        "var(--color-nav-bg)",
+        "nav-text":      "var(--color-nav-text)",
+        "nav-active":    "var(--color-nav-active)",
+        "nav-active-bg": "var(--color-nav-active-bg)",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        mono: ["var(--font-mono)"],
+      },
+      fontSize: {
+        xs:      ["11px", { lineHeight: "16px", fontWeight: "500" }],
+        sm:      ["13px", { lineHeight: "20px", fontWeight: "400" }],
+        base:    ["15px", { lineHeight: "24px", fontWeight: "400" }],
+        md:      ["16px", { lineHeight: "24px", fontWeight: "500" }],
+        lg:      ["18px", { lineHeight: "28px", fontWeight: "600" }],
+        xl:      ["22px", { lineHeight: "30px", fontWeight: "700" }],
+        display: ["32px", { lineHeight: "40px", fontWeight: "700" }],
+      },
+      borderRadius: {
+        xs: "4px", sm: "8px", md: "12px", lg: "16px",
+        xl: "20px", card: "16px", pill: "9999px",
+      },
+      boxShadow: {
+        xs:    "0 1px 2px rgba(0,0,0,.05)",
+        card:  "0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04)",
+        pop:   "0 8px 24px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06)",
+        modal: "0 20px 60px rgba(0,0,0,.18)",
+      },
+      maxWidth: { content: "1200px" },
+    },
+  },
+  plugins: [],
+};
+
+export default config;

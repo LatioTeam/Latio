@@ -1,0 +1,47 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+  presets: [require("nativewind/preset")],
+  theme: {
+    extend: {
+      colors: {
+        bg:            "#ffffff",
+        "bg-subtle":   "#f8f9fb",
+        surface:       "#f1f3f6",
+        border:        "#dde1e7",
+        "border-input":"#8c95a0",
+        text:          "#111827",
+        "text-muted":  "#4b5563",
+        "text-subtle": "#9ca3af",
+        accent:        "#1e4fd4",
+        "accent-hover":"#1740b8",
+        "accent-subtle":"#eef2ff",
+        "on-accent":   "#ffffff",
+        success:       "#15803d",
+        "success-bg":  "#f0fdf4",
+        danger:        "#b91c1c",
+        "danger-bg":   "#fef2f2",
+        warning:       "#b45309",
+        "warning-bg":  "#fffbeb",
+        info:          "#0369a1",
+        "info-bg":     "#f0f9ff",
+        checkin:       "#15803d",
+        checkout:      "#b91c1c",
+        late:          "#b45309",
+        absent:        "#4b5563",
+        leave:         "#6d28d9",
+        ot:            "#0369a1",
+        "nav-bg":      "#0f172a",
+        "nav-text":    "#cbd5e1",
+        "nav-active":  "#60a5fa",
+      },
+      fontFamily: {
+        sans: ["Inter", "Be Vietnam Pro", "System"],
+      },
+      borderRadius: {
+        xs: 4,  sm: 8,  md: 12, lg: 16, xl: 20, card: 16, pill: 9999,
+      },
+    },
+  },
+  plugins: [],
+};

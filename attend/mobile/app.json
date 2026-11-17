@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "LATIO Chấm Công",
+    "slug": "latio-attend",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "latio-attend",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1e4fd4"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.latio.attend",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "LATIO cần vị trí để xác minh chấm công.",
+        "NSCameraUsageDescription": "LATIO cần camera để quét mã QR."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1e4fd4"
+      },
+      "package": "com.latio.attend",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location",
+      "expo-camera"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
